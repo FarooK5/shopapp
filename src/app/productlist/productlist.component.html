@@ -1,0 +1,24 @@
+<app-categories (newItemEvent)="fetchCategory($event)"></app-categories>
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-3" *ngFor="let p of products">
+            <div class="card" style="width: 18rem;">
+                <img src="{{p.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{p.title}}</h5>
+                  <p class="card-text">{{p.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{p.price}}</li>
+                  <li class="list-group-item">{{p.category}}</li>
+               
+                </ul>
+                <div class="card-body">
+                  <button class="btn btn-info form-control" (click)="redirectToProductDetail(p.id)">View More</button>
+                  
+                </div>
+              </div>
+            
+        </div>
+    </div>
+</div>

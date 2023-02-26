@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h3 class="mt-5">Login Here</h3>
+            <form action="" [formGroup]="logform" (ngSubmit)="authenticate()">
+                <div class="mt-3">
+                    <input type="text" placeholder="username" class="form-control" formControlName="username">
+                    <div *ngIf="logform.get('username')?.invalid && logform.get('username')?.touched" class="alert alert-danger">Enter Username</div>
+                </div>
+                <div class="mt-3">
+                    <input type="text" placeholder="password" class="form-control" formControlName="password">
+                    <div *ngIf="logform.get('password')?.invalid && logform.get('password')?.touched" class="alert alert-danger">Enter Password</div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info" type="submit">LogIn</button>
+                  </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{product.price}}</li>
+                <li class="list-group-item">{{product.category}}</li>
+             
+              </ul>
+              <p class="card-text">{{product.description}}</p>
+            </div>
+          </div>
+    </div>
+    <div class="col-4">
+      <form action="" [formGroup]="form" (ngSubmit)="addReview()">
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="comment">
+          <div *ngIf="form.get('comment')?.invalid && form.get('comment')?.touched" class="alert alert-danger">Enter Comment</div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="rating">
+          <div *ngIf="form.get('rating')?.invalid && form.get('rating')?.touched" class="alert alert-danger">Enter Rating</div>
+        </div>
+        <div class="mb-3">
+          <button type="submit">Review</button>
+        </div>
+      </form>
+    </div>
+</div>
